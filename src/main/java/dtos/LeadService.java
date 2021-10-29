@@ -24,8 +24,7 @@ public class LeadService {
     public static void verificarEmail(String email) {
         for (LeadDto referencia : listaLeads) {
             if (referencia.getEmail().equalsIgnoreCase(email)) {
-                throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY,
-                        "Esse email já foi cadastrado! Tente novamente!");
+                throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY);
             }
         }
 
@@ -34,14 +33,13 @@ public class LeadService {
     public static void verificarProduto(String produtoDto) {
         for (ProdutoDto referencia : listaProdutos) {
             if (referencia.getNomeProduto().equalsIgnoreCase(produtoDto)) {
-                throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY,
-                        "Esse produto já foi cadastrado! Tente novamente!");
+                throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY);
             }
 
         }
     }
 
-    public static List<LeadDto> listarLeads() {
+    public List<LeadDto> listarLeads() {
         return listaLeads;
     }
 
