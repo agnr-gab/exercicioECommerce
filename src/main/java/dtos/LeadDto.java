@@ -1,16 +1,17 @@
 package dtos;
 
+import java.util.List;
+
 public class LeadDto {
     private String email;
     private String nome;
     private String telefone;
-    private ProdutoDto produtoDto;
+    private List<ProdutoDto> listaProdutos;
 
-    public LeadDto(String email, String nome, String telefone, ProdutoDto produtoDto) {
+    public LeadDto(String email, String nome, String telefone) {
         this.email = email;
         this.nome = nome;
         this.telefone = telefone;
-        this.produtoDto = produtoDto;
     }
 
     public LeadDto() {
