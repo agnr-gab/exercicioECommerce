@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/leads")
 
@@ -18,14 +20,9 @@ public class LeadController {
         leadService.cadastrarLead(leadDto);
     }
 
-
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public void cadastrarProduto(@RequestBody ProdutoDto produtoDto) {
-        leadService.cadastrarProduto(produtoDto);
+    @GetMapping
+    public List<LeadDto> listarLeads() {
+        return leadService.listarLeads();
     }
-
-
-
 
 }
