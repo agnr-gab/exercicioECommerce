@@ -41,11 +41,11 @@ public class LeadDto {
         this.telefone = telefone;
     }
 
-    public ProdutoDto getProdutoDto() {
-        return produtoDto;
+    public List<ProdutoDto> getListaProdutos() {
+        return listaProdutos;
     }
 
-    public void setProdutoDto(ProdutoDto produtoDto) {
-        this.produtoDto = produtoDto;
+    public void setListaProdutos(List<ProdutoDto> listaProdutos) {
+        this.listaProdutos = listaProdutos;
     }
 }
