@@ -31,6 +31,16 @@ public class LeadService {
 
     }
 
+    public static void verificarProduto(String produtoDto) {
+        for (ProdutoDto referencia : listaProdutos) {
+            if (referencia.getNomeProduto().equalsIgnoreCase(produtoDto)) {
+                throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY,
+                        "Esse produto já foi cadastrado! Tente novamente!");
+            }
+
+        }
+    }
+
     public static List<LeadDto> listarLeads() {
         return listaLeads;
     }
